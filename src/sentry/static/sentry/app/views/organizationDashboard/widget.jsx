@@ -38,6 +38,8 @@ class Widget extends React.Component {
     const orderbyTimeIndex = orderby.indexOf('time');
     if (orderbyTimeIndex !== -1) {
       query.orderby = `${orderbyTimeIndex === 0 ? '' : '-'}${query.aggregations[0][2]}`;
+    } else {
+      query.orderby = orderby;
     }
 
     router.push(
